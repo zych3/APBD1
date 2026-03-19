@@ -5,7 +5,7 @@ namespace APBD1.Repositories;
 public class UserRepository
 {
     private List<User> _dbSet { get; init; } = [];
-    public IReadOnlyList<User> DbSet => _dbSet.AsReadOnly();
+    public IReadOnlyList<User> Users => _dbSet.AsReadOnly();
 
     public Guid AddUser(CreateUserDTO dto)
     {

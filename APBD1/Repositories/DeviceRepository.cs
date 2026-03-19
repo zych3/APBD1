@@ -5,7 +5,13 @@ namespace APBD1.Repositories;
 public class DeviceRepository
 {
     private List<Device> _dbSet = [];
-    public IReadOnlyList<Device> DbSet => _dbSet.AsReadOnly();
+    public IReadOnlyList<Device> Devices => _dbSet.AsReadOnly();
+
+    public IReadOnlyList<Device> GetAvailableDevices()
+    {
+        return _dbSet.Where(d => d.Status == AvailabilityStatus.Available)
+            .ToList().AsReadOnly();
+    }
 
     public Guid AddDevice(CreateDeviceDTO dto)
     {
