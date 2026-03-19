@@ -1,6 +1,6 @@
 ﻿namespace APBD1.Users;
 
-public class User
+public class User 
 {
     public Guid Id { get; init; } = Guid.NewGuid();
     public string Name { get; init; } = string.Empty;
